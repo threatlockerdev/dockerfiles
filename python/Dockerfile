@@ -20,6 +20,9 @@ WORKDIR /app
 
 RUN mkdir -p /srv/static
 
-RUN apk update
-RUN apk add postgresql-client postgresql-dev py3-pip gcc musl-dev python3-dev
+RUN apk add --update \
+  postgresql-client postgresql-dev \
+  py3-pip python3-dev \
+  gcc musl-dev \
+  nodejs npm
 RUN pip3 install pipenv psycopg2
