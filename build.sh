@@ -7,7 +7,12 @@ if [ "$IMAGE_NAME" == "" ]; then
   exit 1
 fi
 
-if [ "$IMAGE_NAME" == "python" ]; then
+if [ "$IMAGE_NAME" == "maintenance" ]; then
+  docker build \
+    -t "hyperqubeio/$IMAGE_NAME:latest" \
+    -f "$IMAGE_NAME/Dockerfile" \
+    "$IMAGE_NAME";
+elif [ "$IMAGE_NAME" == "python" ]; then
   PYTHON_VERSION="${PYTHON_VERSION:-3.8}"
   docker build \
     -t "hyperqubeio/$IMAGE_NAME:$PYTHON_VERSION" \
