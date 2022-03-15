@@ -19,4 +19,11 @@ elif [ "$IMAGE_NAME" == "python" ]; then
     -f "$IMAGE_NAME/Dockerfile" \
     --build-arg PYTHON_VERSION="$PYTHON_VERSION" \
     "$IMAGE_NAME";
+elif [ "$IMAGE_NAME" == "go" ]; then
+  GO_VERSION="${GO_VERSION:-1.18}"
+  docker build \
+    -t "hyperqubeio/$IMAGE_NAME:$GO_VERSION" \
+    -f "$IMAGE_NAME/Dockerfile" \
+    --build-arg GO_VERSION="$GO_VERSION" \
+    "$IMAGE_NAME";
 fi

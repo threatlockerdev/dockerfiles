@@ -2,6 +2,12 @@
 
 Various Dockerfiles we use/push for internal systems.
 
+## go
+
+Available as [hyperqubeio/go](https://hub.docker.com/r/hyperqubeio/go).
+
+An image including Go and libvirt-dev.
+
 ## maintenance
 
 Available as [hyperqubeio/maintenance](https://hub.docker.com/r/hyperqubeio/maintenance).
