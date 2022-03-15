@@ -1,7 +1,7 @@
 {
   "name": "@hyperqube/dockerfiles",
   "version": "0.0.0",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "scripts": {
     "build": "bash build.sh"
   }
