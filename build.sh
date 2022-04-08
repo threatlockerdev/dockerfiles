@@ -26,4 +26,11 @@ elif [ "$IMAGE_NAME" == "go" ]; then
     -f "$IMAGE_NAME/Dockerfile" \
     --build-arg GO_VERSION="$GO_VERSION" \
     "$IMAGE_NAME";
+elif [ "$IMAGE_NAME" == "node-ci" ]; then
+  NODE_VERSION="${NODE_VERSION:-14.17}"
+  docker build \
+    -t "hyperqubeio/$IMAGE_NAME:$NODE_VERSION" \
+    -f "$IMAGE_NAME/Dockerfile" \
+    --build-arg NODE_VERSION="$NODE_VERSION" \
+    "$IMAGE_NAME";
 fi
